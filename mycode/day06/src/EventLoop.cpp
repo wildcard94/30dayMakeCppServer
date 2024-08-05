@@ -11,6 +11,7 @@ void EventLoop::loop() {
   while (!quit) {
     auto chs = ep->poll();
     for (auto c : chs) {
+      c->handleEvent();
     }
   }
 }
